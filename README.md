@@ -36,7 +36,7 @@ you usually dont have to tweak this number
 if this is false, flagged names will retain their original color
 to make them have crimson color, just set this to true and set FLASH_WINDOW to a big number
 
-**FLASH_WINDOW**: time in miliseconds between flagged flashes
+**FLASH_WINDOW**: time in milliseconds between flagged flashes
 
 **SHOW_WARNING**: if true, a ⚠️ will be displayed after names that have been flagged
 
