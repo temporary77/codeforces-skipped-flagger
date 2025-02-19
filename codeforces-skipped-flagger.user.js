@@ -32,7 +32,7 @@
     // if this is false, flagged names will retain their original color
     // to make them have crimson color, just set this to true and set FLASH_WINDOW to a big number
 
-    let FLASH_WINDOW = GM_getValue('FLASH_WINDOW',500); // time in milliseconds between flagged flashes
+    let FLASH_WINDOW = GM_getValue('FLASH_WINDOW',500); // time in miliseconds between flagged flashes
 
     let SHOW_WARNING = GM_getValue('SHOW_WARNING',true); // if true, a ⚠️ will be displayed after names that have been flagged
 
@@ -126,7 +126,7 @@
                     addDesc("FLASH_FLAGGED",`if true, flagged names will continuously flash a crimson color
                             if this is false, flagged names will retain their original color
                             to make them have crimson color, just set this to true and set FLASH_WINDOW to a big number`);
-                    addDesc("FLASH_WINDOW",`time in milliseconds between flagged flashes`);
+                    addDesc("FLASH_WINDOW",`time in miliseconds between flagged flashes`);
                     addDesc("SHOW_WARNING",`if true, a ⚠️ will be displayed after names that have been flagged`);
                     addDesc("SHOW_HOURGLASS",`if true, an ⏳ will be displayed after the name that its checking`);
                     addDesc("CONSOLE_LOGS",`if true, itll log stuff in console`);
@@ -464,7 +464,7 @@
         const originalColor = getComputedStyle(elm).color;
         const originalShadow = getComputedStyle(elm).textShadow === 'none' ? '' : getComputedStyle(elm).textShadow;
         const originalShadowComma = originalShadow === '' ? '' : originalShadow+',';
-        const rgbValues = isGradient(elm) ? '255, 255, 255' : originalColor.match(/\d+/g).slice(0, 3).join(', ');
+        const rgbValues = isGradient(elm) ? (isDark ? '255, 255, 255' : '200, 200, 200') : originalColor.match(/\d+/g).slice(0, 3).join(', ');
         let opacity = 1;
         overrideStyleAttribute(elm,"text-shadow",genShadow(originalShadowComma,rgbValues,opacity));
         let interval = setInterval(() => {
