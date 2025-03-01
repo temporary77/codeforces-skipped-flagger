@@ -184,6 +184,7 @@
         }, {});
 
         styleObj[prop] = `${value} !important`;
+        if (value === "")delete styleObj[prop];
 
         let newStyle = Object.entries(styleObj).map(([key, val]) => `${key}: ${val}`).join('; ');
 
