@@ -242,12 +242,14 @@
     }
 
     function changeOrange(elm) {
-        if (isMasterRank(elm)) {
+        if (elm.classList.contains('user-worseorange'))return;
+        if (elm.classList.isMasterRank(elm)) {
             elm.classList.add('user-worseorange');
         }
     }
 
     function changeRed(elm) {
+        if (elm.classList.contains('user-betterred'))return;
         if (isIGMRank(elm)) {
             elm.classList.add('user-betterred');
         }
