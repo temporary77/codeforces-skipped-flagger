@@ -243,7 +243,7 @@
 
     function changeOrange(elm) {
         if (elm.classList.contains('user-worseorange'))return;
-        if (elm.classList.isMasterRank(elm)) {
+        if (isMasterRank(elm)) {
             elm.classList.add('user-worseorange');
         }
     }
